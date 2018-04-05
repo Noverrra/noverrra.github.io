@@ -1,0 +1,55 @@
+--- 
+layout: default 
+title: About
+breadcrumb: About Us
+subsectionBreadcrumbs:
+  - what-we-do: What We Do
+  - who-we-are: Who We Are
+  - where-we-started: Where We Started
+  - what-we-believe: What We Believe
+---
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 hero-image about">
+      <h2 class="hero-text">ABOUT US</h2>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1 tabs-column">
+      <div id="about-tabs-container" class="tabs-container">
+        <div id="what-we-do-tab" class="tab active">
+          <h2>WHAT WE DO</h2>
+        </div>
+        <div id="who-we-are-tab" class="tab">
+          <h2>WHO WE ARE</h2>
+        </div>
+        <div id="where-we-started-tab" class="tab">
+          <h2>WHERE WE STARTED</h2>
+        </div>
+        <div id="what-we-believe-tab" class="tab">
+          <h2>WHAT WE BELIEVE</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+      <div class="content-select-container">
+        <select id="about-select" class="content-select">
+          <option value="what-we-do">WHAT WE DO</option>
+          <option value="who-we-are">WHO WE ARE</option>
+          <option value="where-we-started">WHERE WE STARTED</option>
+          <option value="what-we-believe">WHAT WE BELIEVE</option>
+        </select>
+        <i class="material-icons">arrow_drop_down</i>
+      </div>
+      <div class="about-sections-container">
+        {% include about-sections/what-we-do.html %}
+        {% include about-sections/who-we-are.html %}
+        {% include about-sections/where-we-started.html %}
+        {% include about-sections/what-we-believe.html %}
+      </div>
+    </div>
+  </div>
+</div>

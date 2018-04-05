@@ -1,0 +1,130 @@
+.hero-image {
+  &.capital {
+    background-image: url('img/hero-images/noverra-capital-s.jpg');
+  }
+}
+
+.capital {
+  h4 {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+  i {
+    font-size: 150px;
+    margin-bottom: 20px;
+  }
+  .icon-block {
+    text-align: center;
+  }
+  .icon-block,
+  .no-icon-block {
+    margin-bottom: 75px;
+    position: relative;
+    &:after {
+      content: "";
+      background-color: $cerulean-blue;
+      bottom: -55px;
+      height: 30px;
+      left: calc(50% - 2.5px);
+      position: absolute;
+      width: 5px;
+    }
+  }
+  .no-icon-block {
+    padding-top: 15px;
+    &:last-of-type{
+      margin-bottom: 50px;
+      &:after {
+        content: "";
+        background-color: transparent;
+        height: 0;
+        width: 0;
+      }
+    }
+  }
+  .section-heading {
+    margin-bottom: 0;
+  }
+  ul {
+    margin-bottom: 25px;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .capital {
+    .diagram-fork {
+      display: flex;
+      padding-top: 100px;
+      position: relative;
+      &:before {
+        content: "";
+        background-color: $cerulean-blue;
+        width: 50%;
+        height: 5px;
+        position: absolute;
+        top: 0;
+        left: 25%;
+      }
+      &:after {
+        content: "";
+        background-color: $cerulean-blue;
+        width: 5px;
+        height: 75px;
+        position: absolute;
+        bottom: 5px;
+        left: calc(50% - 2.5px);
+      }
+      div {
+        flex: 1;
+        &:after {
+          content: "";
+          position: absolute;
+          background-color: $cerulean-blue;
+          width: 5px;
+          height: 80px;
+          top: -100px;
+        }
+      }
+      ul, p {
+        padding: 0 15px;
+      }
+    }
+    .icon-block {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      &:after {
+        bottom: -75px;
+        height: 80px;
+      }
+      p {
+        margin-bottom: 50px;
+      }
+    }
+    .no-icon-block {
+      &:last-of-type {
+        padding-top: 50px;
+        margin-bottom: 25px;
+      }
+    }
+    h4 {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .hero-image {
+    &.capital {
+      background-image: url('img/hero-images/noverra-capital-m.jpg');
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .hero-image {
+    &.capital {
+      background-image: url('img/hero-images/noverra-capital-l.jpg');
+    }
+  }
+}

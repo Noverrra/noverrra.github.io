@@ -1,0 +1,131 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}  
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@-webkit-keyframes fadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
+}  
+@keyframes fadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
+}
+.slideout-menu {
+  background-color: $chicago;
+  color: $hint-of-red;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 256px;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 10001;
+  display: none;
+  h2 {
+    text-align: center;
+  }
+  .mobile-nav-link {
+    align-items: center;
+    background-color: $cerulean-blue;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 20%;
+    justify-content: center;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    > a {
+      font-weight: bold;
+      padding: 50px;
+      &.deployed {
+        padding: 0;
+      }
+    }
+    a {
+      color: $hint-of-red;
+    }
+    &:nth-of-type(2) {
+      background-color: $biscay;
+    }    
+    &:nth-of-type(3) {
+      background-color: $blumine;
+    }    
+    &:nth-of-type(4) {
+      background-color: $danube;
+    }
+    .mobile-sub-toggle {
+      font-weight: bold;
+      margin-bottom: 5px;
+      position: relative;
+      i {
+        position: absolute;
+        transition: transform 0.3s ease-out;
+      }
+      &.deployed {
+        i {
+          transform: rotate(90deg);
+        }
+      }
+    }
+    &.active {
+      transition: all 0.3s;
+      flex: 0 1 45%;
+    }
+    &.inactive {
+      transition: all 0.3s;
+      flex: 0 1 15%;
+    }
+  }
+  .mobile-sub-menu {
+    width: 100%;
+    &.invisible {
+      display: none;
+      -webkit-animation: fadeOut 1s;
+      animation: fadeOut 1s;
+    }
+    &.visible {
+      display: block;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s;
+    }
+    a {
+      display: block;
+      font-size: 14px; 
+      // padding-left: 15px;
+      padding: 20px 0 0 15px;
+    }
+  }
+  .flex-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  background-color: #FFF; /* A background-color is required */
+  min-height: 100vh;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}

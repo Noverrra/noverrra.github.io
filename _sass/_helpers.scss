@@ -1,0 +1,7 @@
+@mixin padding-right($value) {
+  padding-right: $value;
+}
+
+.pr-25 {
+  @include padding-right(25px);
+}

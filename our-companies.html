@@ -1,0 +1,51 @@
+--- 
+layout: default 
+title: Our Companies
+subsectionBreadcrumbs:
+  - brighter-mechanical: Brighter Mechanical
+  - thorpe-design: Thorpe Design
+---
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 hero-image our-companies">
+      <h2 class="hero-text">OUR COMPANIES</h2>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+      <div class="content-section">
+        <p>Our three Owners have been involved as Principals and Board Members in companies spanning the business services, insurance,
+        real estate, and technology industry, with operations across Canada, the United States and Asia. In addition, we have advised
+        on over $2 Billion in corporate transactions for some of Canada’s largest companies and government organizations.</p>
+        <p>The current and long term strategic focus of the Noverra Group of Companies is the acquisition and development of our family of Industrial and Construction
+        Services businesses in a geography which is 6 hours door-to-door from Vancouver, British Columbia.</p>
+        <p>Our current portfolio includes the following two group companies employing 250 staff across British Columbia and California. We have the financial
+        capacity and intent to continue to grow by acquiring new companies that fit our long term objectives.</p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-10 col-md-offset-1 companies-info">
+      <div id="companies-tabs-container" class="tabs-container ">
+        <div id="brighter-mechanical-tab" class="tab active">
+          <h2>BRIGHTER MECHANICAL</h2>
+          <a href="#brighter-mechanical"></a>
+        </div>
+        <div id="thorpe-design-tab" class="tab">
+          <h2>THORPE DESIGN</h2>
+          <a href="#thorpe-design"></a>
+        </div>
+      </div>
+      <div class="content-select-container">
+        <select id="companies-select" class="content-select">
+          <option value="brighter-mechanical">BRIGHTER MECHANICAL</option>
+          <option value="thorpe-design">THORPE DESIGN</option>
+        </select>
+        <i class="material-icons">arrow_drop_down</i>
+      </div>
+       {% include our-companies-sections/brighter-mechanical.html %}
+       {% include our-companies-sections/thorpe-design.html %}
+    </div>
+  </div>
+</div>

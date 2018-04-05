@@ -1,0 +1,402 @@
+.hero-image {
+  &.about {
+    background-image: url('img/hero-images/about-s.jpg');
+  }
+}
+
+.about-sections-container {
+  background-color: $hint-of-red;
+}
+
+.about-select-container {
+  background-color: $blumine;
+  color: $hint-of-red;
+  margin: 25px 0 0 0;
+  position: relative;
+  -webkit-appearance: none;
+  i {
+    color: $hint-of-red;
+    position: absolute;
+    right: 5px;
+    font-size: 40px;
+    top: calc(50% - 20px);
+  }
+}
+
+#about-select {
+  background-color: $blumine;
+  border-radius: 0px;
+  font-size: 20px;
+  padding: 15px;
+  position: relative;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  width: 100%;
+}
+
+.what-we-do {
+  ul {
+    list-style: none;
+    margin-left: 0;
+    i {
+      font-size: 150px;
+      margin-bottom: 15px;
+    }
+  }
+  li {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .service {
+    margin-bottom: 25px;
+    .color-block {
+      color: $hint-of-red;
+      margin-bottom: 25px;
+      padding: 15px;
+    }
+    &:nth-of-type(1) {
+      .color-block {
+        background-color: $blumine;
+      }
+    }
+    &:nth-of-type(2) {
+      .color-block {
+        background-color: $danube;
+      }
+    }
+    &:nth-of-type(3) {
+      .color-block {
+        background-color: $cerulean-blue;
+      }
+    }
+    .images-container {
+      display: flex;
+      justify-content: space-between;
+      div {
+        width: 40%;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.who-we-are {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    .img-responsive {
+      max-width: 220px;
+      max-height: 255px;
+    }
+  }
+  img {
+    margin: 25px auto;
+  }
+  .title, .read-more {
+    font-weight: bold;
+  }
+}
+
+.where-we-started {
+  .image-container {
+    display: none;
+  }
+  img {
+    height: 255px;
+    margin: 25px auto;
+    object-fit: cover;
+    min-width: 220px;
+  }
+}
+
+.what-we-believe {
+  .belief {
+    color: white;
+    padding: 15px;
+    margin-bottom: 25px;
+    
+    &:nth-of-type(1){
+      background-color: $cerulean-blue;
+    }
+    &:nth-of-type(2){
+      background-color: $chicago;
+    }
+    &:nth-of-type(3){
+      background-color: $blumine;
+    }
+    &:nth-of-type(4){
+      background-color: $cerulean-blue;
+    }
+    &:nth-of-type(5){
+      background-color: $chicago;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) { 
+  .hero-image {
+    height: 400px;
+  }
+  .hero-text {
+    margin-bottom: 0;
+  }
+  .tabs-column {
+    padding: 0px;
+  }
+
+  .what-we-do {
+    ul {
+      display: flex;
+      i {
+        font-size: 130px;
+      }
+    }
+    li {
+      flex: 1;
+      h3 {
+        font-size: 22px;
+        padding: 0 10px;
+      }
+    }
+    .company-title-container {
+      min-height: 150px;
+    }
+    .service {
+      position: relative;
+      .section-heading {
+        padding: 25px 0;
+      }
+      .color-block {
+        margin-left: 25px;
+        position: relative;
+        width: 85%;
+        z-index: 2;
+      }
+      .images-container {
+        div {
+          img {
+            position: absolute;
+          }
+        }
+      }
+      &:nth-of-type(1){
+        .section-heading  {          
+          text-align: left;
+        }
+        .images-container {
+          div {
+            &:nth-of-type(1){
+              img {
+                top: -25px;
+                left: 50%;
+                width: 20%;
+              }
+            }
+            &:nth-of-type(2){
+              img {
+                width: 30%;
+                top: 170px;
+                left: 60%;
+              }
+            }
+          }
+        }
+      }
+      &:nth-of-type(2){
+        .section-heading {
+          text-align: left;
+        }
+        .images-container {
+          div {
+            &:nth-of-type(1){
+              img {
+                top: -25px;
+                left: 5%;
+                width: 30%;
+              }
+            }
+            &:nth-of-type(2){
+              img {
+                width: 45%;
+                top: 250px;
+                left: 40%;
+              }
+            }
+          }
+        }
+      }
+      &:nth-of-type(3){
+        .section-heading {
+          text-align: left;
+        }
+        .images-container {
+          div {
+            &:nth-of-type(1){
+              img {
+                top: 350px;
+                left: 5%;
+                width: 30%;
+              }
+            }
+            &:nth-of-type(2){
+              img {
+                width: 40%;
+                top: 200px;
+                right: 5%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .who-we-are {
+    .profile {
+      flex-direction: row;
+      margin: 50px 0 60px 0;
+      img {
+        float: left;
+         margin: 0 25px 15px 0;
+      }
+      &:last-of-type {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .where-we-started {
+    position: relative;
+    .image-container {
+      display: block;
+      position: relative;
+      height: 500px;
+    }
+    img {
+      position: absolute;
+      &.mobile {
+        display: none;
+      }
+      &:nth-of-type(1){
+        left: 10%;
+        top: 25px;
+        width: 30%;
+      }
+      &:nth-of-type(2){
+        left: 35%;
+        top: 100px;
+        width: 40%;
+        z-index: 3;
+      }
+      &:nth-of-type(3){
+        right: 5%;
+        top: 50px;
+        width: 25%;
+      }
+    }
+  }
+  .what-we-believe {
+    .belief {
+      padding: 50px;
+      margin-bottom: 50px;
+      &:nth-of-type(1){
+        background: linear-gradient(400deg, $cerulean-blue 0%, $cerulean-blue 90%, transparent 90%, transparent 100%);
+        margin-top: 50px;
+      }
+      &:nth-of-type(3){
+        background: linear-gradient(400deg, $blumine 0%, $blumine 90%, transparent 90%, transparent 100%);
+      }
+      &:nth-of-type(5){
+        background: linear-gradient(400deg, $chicago 0%, $chicago 90%, transparent 90%, transparent 100%);
+      }
+      &:last-of-type {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+@media (min-width: $screen-md-min) { 
+  .hero-image {
+    height: 450px;
+    &.about {
+      background-image: url('img/hero-images/about-m.jpg');
+    }
+  }
+  .what-we-do {
+    .service {
+      &:nth-of-type(2){
+        .images-container {
+          div {
+            &:nth-of-type(1) {
+              img {
+                left: -5px;
+              }
+            }
+            &:nth-of-type(2) {
+              img {
+                width: 35%;
+                left: 70%;
+              }
+            }
+          }
+        }
+      }
+      &:nth-of-type(3){
+        .images-container {
+          div {
+            &:nth-of-type(1) {
+              img {
+                top: 300px;
+                left: -5%;
+              }
+            }
+            &:nth-of-type(2) {
+              img {
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .where-we-started {
+    img {
+      &:nth-of-type(2) {
+        width: 35%;
+      }
+      &:nth-of-type(3) {
+        right: 10%;
+      }
+    }
+  }
+}
+@media (min-width: $screen-lg-min) {
+  .hero-image {
+    &.about {
+      background-image: url('img/hero-images/about-l.jpg');
+    }
+  }
+  .where-we-started {
+    img {
+      &:nth-of-type(1) {
+        width: 25%;
+      }
+      &:nth-of-type(2) {
+        width: 33%;
+        top: 70px;
+        left: 34%;
+      }
+      &:nth-of-type(3) {
+        top: 10px;
+      }
+    }
+  }
+}

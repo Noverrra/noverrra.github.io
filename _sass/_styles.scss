@@ -1,0 +1,312 @@
+// Use this for global/general styles, and for overriding any bootstrap or 
+// minima styles that are still around
+
+@font-face {
+  font-family: Nevis;
+  src: url(fonts/nevis.ttf);
+}
+
+@mixin link($color, $visitedColor) {
+  color: $color;
+  text-decoration: none;
+  transition: color 0.2s;
+  &:hover {
+    color: darken($color, 20%);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+  &:visited {
+    color: $visitedColor;
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+  }
+}
+  
+a {
+  @include link($cerulean-blue, $black);
+}
+
+a.link-white {
+  @include link($nav-hover, white);
+}
+
+body {
+  background-color: $hint-of-red;
+  font-family: 'Noto Sans', sans-serif;
+  color: $black;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.box-shadow {
+  box-shadow: 0px 15px 10px -15px rgba(0,0,0,0.80); 
+}
+
+p {
+  font-size: 16px;
+}
+
+main, .container {
+  background-color: $hint-of-red;
+}
+
+main {
+  padding-bottom: 50px;
+}
+
+.content-section {
+  padding-top: 25px;
+  text-align: left;
+  ul {
+    text-align: left;
+  }
+  li {
+    margin-bottom: 15px;
+  }
+}
+
+.content-select-container {
+  background-color: $blumine;
+  color: $hint-of-red;
+  margin: 25px 0 0 0;
+  position: relative;
+  i {
+    color: $hint-of-red;
+    position: absolute;
+    pointer-events: none;
+    right: 5px;
+    font-size: 40px;
+    top: calc(50% - 20px);
+  }
+}
+
+.content-select {
+  background-color: $blumine;
+  border-radius: 0px;
+  font-size: 20px;
+  padding: 15px;
+  position: relative;
+  -webkit-border-radius: 0px;
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+
+.hero-image {
+  padding-left: 0px;
+  padding-right: 0px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+}
+
+.hero-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px;
+  position: absolute;
+  text-align: center;
+  bottom: 10px;
+  width: 100%;
+  color: white;
+}
+
+.list-heading {
+  margin-bottom: 25px;
+}
+
+.overlay {
+  background-color: black;
+  display: none;
+  height: 100%;
+  opacity: 0.7;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.photo-row {
+  margin: 25px 0 0 0;
+  .img-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    overflow: hidden;
+    img {
+      max-width: 80%;
+      object-fit: cover;
+      object-position: -50px 0;
+      height: 300px;
+      min-width: 300px;
+      &.canada-key {
+        object-position: -140px 0;
+      }
+    }
+  }
+}
+
+.profile-image {
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: inline-block;
+  height: 150px;
+  margin: 15px 0 25px 0;
+  width: 150px;
+}
+
+.read-more {
+  color: $black;
+  display: block;
+  text-align: center;
+  &:hover {
+    color: $danube;
+    text-decoration: none;
+  }
+}
+
+.scrollTop {
+  background: $danube;
+  border-radius: 50%;
+  bottom: 25px;
+  cursor: pointer;
+  display: none;
+  padding: 9px;
+  position: fixed;
+  right: 20px;
+  transition: all 0.2s;
+  z-index: 10000;
+  &:hover {
+    background-color: darken($danube, 10%);
+    transition: all 0.2s;
+  }
+  a {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    i {
+      color: $hint-of-red;
+      font-size: 32px;
+    }
+  }
+}
+
+.section-heading {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 25px 0;
+  text-align: center;
+}
+
+.section-description {
+  font-size: 18px;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.section-description-block {
+  background-color: $blumine;
+  color: $hint-of-red;
+  padding: 15px;
+  margin: 25px 0;
+}
+
+select {
+  color: $hint-of-red;
+}
+
+.tabs-container {
+  display: none;
+}
+
+@media (min-width: $screen-sm-min) { 
+  .hero-text {
+    bottom: 25px;
+    font-size: 36px;
+    padding-left: 25px;
+    text-align: left;
+  }
+  .content-section {
+    text-align: left;
+    padding-top: 50px;
+  }
+  .content-select-container {
+    display: none;
+  }
+
+  .icon-block-list {
+    margin: 25px 0;
+  }
+
+  .list-heading {
+    margin-bottom: 50px;
+  }
+
+  main {
+    padding-bottom: 75px;
+  }
+
+  .photo-row {
+    margin: 50px 0 0 0;
+    .img-container {
+      margin-bottom: 0;
+    }
+  }
+
+  .profile-image {
+    height: 200px;
+    width: 200px;
+  }
+
+  .section-heading {
+    font-size: 24px;
+    padding: 50px;
+  }
+  .section-description {
+    font-size: 24px;
+    padding: 25px 0;
+    text-align: left;
+  }
+  .section-description-block {
+    margin: 50px 0;
+  }
+
+  .tabs-container {
+    display: flex;
+    .tab {
+      align-items: center;
+      background-color: $blumine;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      padding: 15px 0;
+      &.active {
+        background-color: $hint-of-red;
+        h2 {
+          color: $black;
+        }
+        &:hover {
+          background-color: darken($hint-of-red, 10%);
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: darken($blumine, 10%);
+      }
+    }
+    h2 {
+      color: $hint-of-red;
+      font-size: 18px;
+      margin-bottom: 0;
+      text-align: center;
+      white-space: nowrap;
+    }
+  }
+}

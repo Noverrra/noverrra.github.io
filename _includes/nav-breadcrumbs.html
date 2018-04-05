@@ -1,0 +1,36 @@
+<nav class="breadcrumbs hidden-sm-down" {% if (page.url == '/') and (site.breadcrumbs.root.hide) %}{{ 'style="display: none;"' }}{% endif %}>
+  <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+    {% assign position = 0 %}
+    {% for crumbitem in breadcrumbs %}
+      {% assign position = position  | plus: 1 %}
+
+      {% if forloop.first and site.breadcrumbs.root.image %}
+        {% include icon.html class="breadcrumb-item" color=include.color %}
+        {% continue %}
+      {% endif %}
+
+      {% if forloop.last and false %}
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"{% if crumbitem.getUrlHash != '' %} data-hash="{{ crumbitem.getUrlHash }}"{% endif %}>
+          <span property="name">{{ crumbitem.title }}</span>
+          <meta property="position" content="{{ position }}" />
+          <div class="arrow-right"></div>
+        </li>
+        {% continue %}
+      {% endif %}
+
+      {% if forloop.first %}
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"{% if crumbitem.getUrlHash != '' %} data-hash="{{ crumbitem.getUrlHash }}"{% endif %}>
+          <a property="item" typeof="WebPage" href="/"><span property="name">{{ crumbitem.title }}</span><meta property="position" content="{{ position }}" /></a>
+          <div class="arrow-right"></div>
+        </li>
+        {% continue %}
+      {% endif %}
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"{% if crumbitem.getUrlHash != '' %} data-hash="{{ crumbitem.getUrlHash }}"{% endif %}>
+      <a property="item" typeof="WebPage" href="{{ crumbitem.getUrl | prepend: site.baseurl }}#{{ crumbitem.getUrlHash }}"><span property="name">{{ crumbitem.title }}</span><meta property="position" content="{{ position }}" /></a>
+        <div class="arrow-right"></div>
+      </li>
+    {% endfor %}
+
+  </ol>
+</nav>

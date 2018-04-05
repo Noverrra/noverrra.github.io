@@ -1,0 +1,111 @@
+<footer>
+    <div class="footer-top">
+        <span class="blue"></span>
+        <span class="navy"></span>
+        <span class="heather"></span>
+        <span class="red"></span>
+        <span class="blue"></span>
+    </div>
+    <p>&copy; {{ 'now' | date: "%Y" }} Noverra Group</p>
+    <span class="site-tag">Original Website Design & Development by <a href="http://www.sam-coll.com">Sam Coll</a></span>
+</footer>
+<script>
+    function LightenDarkenColor(col, amt) {
+      
+        var usePound = false;
+      
+        if (col[0] == "#") {
+            col = col.slice(1);
+            usePound = true;
+        }
+     
+        var num = parseInt(col,16);
+     
+        var r = (num >> 16) + amt;
+     
+        if (r > 255) r = 255;
+        else if  (r < 0) r = 0;
+     
+        var b = ((num >> 8) & 0x00FF) + amt;
+     
+        if (b > 255) b = 255;
+        else if  (b < 0) b = 0;
+     
+        var g = (num & 0x0000FF) + amt;
+     
+        if (g > 255) g = 255;
+        else if (g < 0) g = 0;
+     
+        return (usePound?"#":"") + (g | (b << 8) | (r << 16)).toString(16);
+      
+    }
+
+    var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70,
+        'side': 'right'
+    });
+    document.querySelector('.toggle-button').addEventListener('click', function() {
+        $('.overlay').toggle();
+        slideout.toggle();
+    });
+
+    function rgb2hex(rgb){
+     rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+     return (rgb && rgb.length === 4) ? "#" +
+      ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+      ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+      ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+    }
+    $(document).ready(function() {
+
+        $('.mobile-sub-toggle').click(function() {
+            // blank slate : if nothing has been clicked, add active and inactive accordingly       
+            if (!$(this).parent().hasClass('active') && !$(this).parent().hasClass('inactive')) {
+                
+                $(this).parent().siblings().toggleClass('inactive');
+                $(this).parent().toggleClass('active');
+
+                // display inner contents
+                $(this).toggleClass("deployed");
+                $(this).siblings().toggleClass("visible").toggleClass("invisible");
+            }
+            // if click is open item, revert to blank slate
+            else if ($(this).parent().hasClass('active')) {
+                $(this).parent().removeClass('active'); 
+                $(this).parent().siblings().removeClass('inactive');
+
+                // hide inner contents
+                $(this).toggleClass("deployed");
+                $(this).siblings().toggleClass("visible").toggleClass("invisible");
+            } 
+            // if click is on closed item while other item is open
+            else if ($(this).parent().hasClass('inactive')) {
+                if ($(this).parent().siblings().hasClass('active')) {
+                    $(this).toggleClass("deployed");
+                    $(this).siblings().toggleClass("visible").toggleClass("invisible");
+                }
+                $(this).parent().removeClass('inactive');
+                $(this).parent().addClass('active');
+            } 
+        });
+
+        $('.breadcrumb-item').hover(
+            function() {
+                var $backgroundColor = $(this).css('background-color');
+                var backgroundColorHex = rgb2hex($backgroundColor);
+                var lighterBackgroundColor = LightenDarkenColor(backgroundColorHex, 1);
+                $(this).find('.arrow-right').css('border-left-color', lighterBackgroundColor); 
+            },
+            function() {
+                var $backgroundColor = $(this).css('background-color');
+                var backgroundColorHex = rgb2hex($backgroundColor);
+                var darkerBackgroundColor = LightenDarkenColor(backgroundColorHex, -1);
+                $(this).find('.arrow-right').css('border-left-color', darkerBackgroundColor);
+            }
+        );
+
+    });
+</script>

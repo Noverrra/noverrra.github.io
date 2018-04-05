@@ -1,0 +1,48 @@
+footer {
+    align-items: center;
+    background-color: $chicago;
+    color: $hint-of-red;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    p {
+        color: darkgrey;
+        padding-top: 25px;
+    }
+    .footer-top {
+        display: flex;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        span {
+            display: inline-block;
+            flex: 1 1 auto;
+            height: 7px;
+            &.blue {
+                background-color: $cerulean-blue;
+            }
+            &.navy {
+                background-color: $biscay;
+            }            
+            &.red {
+                background-color: $danube;
+            }
+            &.heather {
+                background-color: $heather;
+            }
+        }
+    }
+    .site-tag {
+        position: absolute;
+        bottom: 5px;
+        color: darkgrey;
+        font-size: 11px;
+        right: 5px;
+        a {
+            color: $heather;
+        }
+    }
+}

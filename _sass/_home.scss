@@ -1,0 +1,77 @@
+.hero-home {
+    align-items: center;
+    background-image: url('img/hero-images/home3-s.jpg');
+    display: flex;
+    justify-content: center;
+    h2 {
+        color: white;
+        font-family: Nevis;
+        font-size: 54px;
+        letter-spacing: 1px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .white-overlay {
+        align-items: center;
+        background-color: rgba(white,0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 100%;
+        padding: 50px 100px; 
+    }
+    .hero-caption {
+        color: $logo-grey;
+        font-size: 24px;
+        text-align: center;
+    }
+}
+
+.home-description {
+    background-color: $biscay; 
+    color: $hint-of-red;
+    margin-bottom: -75px;
+    padding: 50px 15px;
+    text-align: left;
+    a {
+        color: $heather;
+        &:hover {
+            color: $hint-of-red;
+        }
+        &:visited {
+            color: $heather;
+        }
+    }
+}
+
+@media(min-width: $screen-sm-min) {
+    .hero-home {
+        .white-overlay {
+            padding: 50px 100px;
+        }
+    }
+    .home-description {
+        text-align: left;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .hero-home {
+        background-image: url('img/hero-images/home3-m.jpg');
+    }
+    .home-description {
+        padding: 100px;
+    }
+}
+
+@media (min-width: $screen-lg-min) {
+    .hero-home {
+        background-image: url('img/hero-images/home3-l.jpg');
+        h2 {
+            text-align: left;
+        }
+        .hero-caption {
+            text-align: left;
+        }
+    }
+}

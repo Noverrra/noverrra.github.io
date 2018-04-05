@@ -1,0 +1,69 @@
+.hero-image {
+  &.our-companies {
+    background-image: url('img/hero-images/our-companies-s.jpg');
+  }
+}
+
+.profile-image {
+  &.thorpe-design,
+  &.brighter-mechanical {
+    border-radius: 0;
+    background-size: contain;
+    height: 200px;
+    width: 100%;
+  }
+  &.thorpe-design {
+    background-image: url('/assets/img/thorpe.jpg');
+  }
+  &.brighter-mechanical {
+    background-image: url('/assets/img/brighter_mechanical.jpg');
+  }
+}
+
+.companies-section {
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: $screen-sm-min) { 
+  .companies-info {
+    margin-top: 25px;
+  }
+  #companies-tabs-container {
+    .tab {
+      padding: 25px 0;
+      &.active {
+        background-color: white;
+        &:hover {
+          background-color: darken($heather, 10%);
+        }
+      }
+    }
+  }
+  .companies-section {
+    display: block;
+    .profile-image {
+      display: block;
+      margin: 15px auto 25px auto;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) { 
+  .hero-image {
+    &.our-companies {
+      background-image: url('img/hero-images/our-companies-m.jpg');
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) { 
+  .hero-image {
+    &.our-companies {
+      background-image: url('img/hero-images/our-companies-l.jpg');
+    }
+  }
+}

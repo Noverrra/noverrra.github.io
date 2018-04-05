@@ -1,0 +1,120 @@
+.hero-image {
+  &.contact {
+    background-image: url('img/hero-images/contact2-s.jpg');
+  }
+}
+
+.contact {
+  padding: 50px 0 0;
+  .address {
+    align-items: center;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    margin-bottom: 0;
+    text-align: center;
+    h1 {
+      font-family: Nevis;
+    }
+  }
+  .map {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+  }
+  .contact-form {
+    background-color: $biscay;
+    margin-bottom: -75px;
+    margin-left: calc(50% - 50vw);
+    padding: 0 0 50px 0;
+    width: 100vw;
+  }
+  .contact-info {
+    margin: 35px 0 0 0;
+    .row {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  h1 {
+    font-size: 22px;
+  }
+  form {
+    color: $hint-of-red;
+    padding: 15px;
+    margin-top: 25px;
+    .directions {
+      margin: 15px 0 35px 0;
+    }
+    > .field {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      width: 100%;
+      input, textarea {
+        border-radius: 2px;
+        border-style: none;
+        color: $black;
+        padding: 5px;
+        -webkit-border-radius: 2px;
+        width: 70%;
+      }
+      textarea {
+        min-height: 130px;
+      }
+    }
+    label {
+      max-width: 30%;
+    }
+    button {
+      background-color: $hint-of-red;
+      color: $cerulean-blue;
+      border: 0;
+      border-radius: 2px;
+      display: block;
+      -webkit-border-radius: 2px;
+      margin: 0 auto;
+      padding: 10px 25px;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) { 
+  .contact {
+    text-align: center;
+    .map {
+      max-height: none;
+      overflow: auto;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) { 
+  .hero-image {
+    &.contact {
+      background-image: url('img/hero-images/contact2-m.jpg');
+    }
+  }
+  .contact {
+    .contact-wrapper {
+      padding: 0 0 50px 0;
+    }
+    .address {
+      height: 450px;
+      justify-content: flex-start;
+      text-align: left;
+    }
+    form {
+      > .field {
+        input, textarea {
+          width: 80%;
+        }
+      }
+      label {
+        max-width: 20%;
+      }
+    }
+  }
+}
