@@ -84,6 +84,11 @@
             // if click is on closed item while other item is open
             else if ($(this).parent().hasClass('inactive')) {
                 if ($(this).parent().siblings().hasClass('active')) {
+                    $(this).parent().siblings().find('.mobile-sub-toggle').removeClass('deployed');
+                    $(this).parent().siblings().find('.mobile-sub-menu').removeClass('visible');
+                    $(this).parent().siblings().find('.mobile-sub-menu').addClass('invisible');
+                    $(this).parent().siblings().removeClass('active');
+                    $(this).parent().siblings().addClass('inactive')
                     $(this).toggleClass("deployed");
                     $(this).siblings().toggleClass("visible").toggleClass("invisible");
                 }
