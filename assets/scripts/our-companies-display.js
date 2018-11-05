@@ -5,7 +5,7 @@ $(function () {
     updateBreadcrumbs($(this).val());
   });
 
-  $('#companies-tabs-container .tab').on('click', function () {
+  $('#companies-tabs-container .tab, .dropdown-content a').on('click', function () {
     var stripped = $(this).attr('id').substring(0, $(this).attr('id').length - 4);
     updateDesktopViewCompanies(stripped);
     updateMobileViewCompanies(stripped);
@@ -31,8 +31,8 @@ $(function () {
   };
 
   var updateDesktopViewCompanies = function(hash) {
-    $('.tab').removeClass('active');
-    $("#" + hash + "-tab").addClass('active');
+    $('#companies-tabs-container .tab').removeClass('active');
+    $("#companies-tabs-container #" + hash + "-tab").addClass('active');
     $('.companies-section').hide();
     $('#' + hash).show();
   };
