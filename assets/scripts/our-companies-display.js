@@ -13,6 +13,23 @@ $(function () {
   });
 
   $(document).ready(function() {
+
+    var path = window.location.hash;
+    console.log(path);
+
+    switch(path) {
+      case '#thorpe-design':
+        $('#companies-select>option:eq(1)').prop('selected', true);
+      break;
+      case '#brighter-mechanical':
+        $('#companies-select>option:eq(0)').prop('selected', true);
+      break;
+      case '#tfc-concrete':
+        $('#companies-select>option:eq(2)').prop('selected', true);
+      break;
+    }
+
+
     $("[data-hash]").hide();
     var hash = window.location.hash;
     hash = hash.substr(1);
