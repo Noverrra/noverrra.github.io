@@ -57,6 +57,9 @@ main, .container {
 
 main {
   padding-bottom: 50px;
+  &.no-pad {
+    padding: 0;
+  }
 }
 
 .content-section {
@@ -251,6 +254,9 @@ select {
 
   main {
     padding-bottom: 75px;
+    &.no-pad {
+      padding-bottom: 0;
+    }
   }
 
   .photo-row {
